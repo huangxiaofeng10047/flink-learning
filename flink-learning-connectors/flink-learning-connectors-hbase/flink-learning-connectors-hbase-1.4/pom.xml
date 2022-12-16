@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-hbase-1.4_${scala.binary.version}</artifactId>
+            <artifactId>flink-connector-hbase-1.4</artifactId>
             <version>${flink.version}</version>
         </dependency>
     </dependencies>

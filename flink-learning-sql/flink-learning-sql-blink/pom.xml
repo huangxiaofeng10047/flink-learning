@@ -38,13 +38,13 @@
         <!--for ES Sink -->
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-elasticsearch6_${scala.binary.version}</artifactId>
+            <artifactId>flink-connector-elasticsearch6</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <!--for HBase Sink -->
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-hbase-2.2_${scala.binary.version}</artifactId>
+            <artifactId>flink-connector-hbase-2.2</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <dependency>
@@ -55,7 +55,7 @@
 
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-jdbc_${scala.binary.version}</artifactId>
+            <artifactId>flink-connector-jdbc</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <dependency>
