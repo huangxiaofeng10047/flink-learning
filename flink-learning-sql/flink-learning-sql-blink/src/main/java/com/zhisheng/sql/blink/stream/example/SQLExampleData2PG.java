@@ -13,7 +13,7 @@ public class SQLExampleData2PG {
         StreamExecutionEnvironment blinkStreamEnv = StreamExecutionEnvironment.getExecutionEnvironment();
         blinkStreamEnv.setParallelism(1);
         EnvironmentSettings blinkStreamSettings = EnvironmentSettings.newInstance()
-                .useBlinkPlanner()
+//                .useBlinkPlanner()
                 .inStreamingMode()
                 .build();
         StreamTableEnvironment blinkStreamTableEnv = StreamTableEnvironment.create(blinkStreamEnv, blinkStreamSettings);
@@ -44,10 +44,10 @@ public class SQLExampleData2PG {
 
         String sql = "insert into user_behavior_aggregate select yidun_score from user_behavior";
 
-        blinkStreamTableEnv.sqlUpdate(ddlSource);
-        blinkStreamTableEnv.sqlUpdate(ddlSink);
-        blinkStreamTableEnv.sqlUpdate(sql);
+        blinkStreamTableEnv.sqlQuery(ddlSource);
+        blinkStreamTableEnv.executeSql(ddlSink);
+        blinkStreamTableEnv.sqlQuery(sql);
 
-        blinkStreamTableEnv.execute("Blink Stream SQL demo PG");
+//        blinkStreamTableEnv.execute("Blink Stream SQL demo PG");
     }
 }

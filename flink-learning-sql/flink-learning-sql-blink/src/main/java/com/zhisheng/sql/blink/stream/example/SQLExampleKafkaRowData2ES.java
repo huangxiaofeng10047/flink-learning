@@ -31,7 +31,7 @@ public class SQLExampleKafkaRowData2ES {
         StreamExecutionEnvironment blinkStreamEnv = StreamExecutionEnvironment.getExecutionEnvironment();
         blinkStreamEnv.setParallelism(1);
         EnvironmentSettings blinkStreamSettings = EnvironmentSettings.newInstance()
-                .useBlinkPlanner()
+//                .useBlinkPlanner()
                 .inStreamingMode()
                 .build();
         StreamTableEnvironment blinkStreamTableEnv = StreamTableEnvironment.create(blinkStreamEnv, blinkStreamSettings);
@@ -69,10 +69,10 @@ public class SQLExampleKafkaRowData2ES {
         String sql = "insert into user_behavior_es select userDetail.userId, item_id from user_behavior";
         System.out.println(ddlSource);
         System.out.println(ddlSink);
-        blinkStreamTableEnv.sqlUpdate(ddlSource);
-        blinkStreamTableEnv.sqlUpdate(ddlSink);
-        blinkStreamTableEnv.sqlUpdate(sql);
+        blinkStreamTableEnv.sqlQuery(ddlSource);
+        blinkStreamTableEnv.sqlQuery(ddlSink);
+        blinkStreamTableEnv.sqlQuery(sql);
 
-        blinkStreamTableEnv.execute("Blink Stream SQL Job2 —— read data from kafka，sink to es");
+//        blinkStreamTableEnv.execute("Blink Stream SQL Job2 —— read data from kafka，sink to es");
     }
 }

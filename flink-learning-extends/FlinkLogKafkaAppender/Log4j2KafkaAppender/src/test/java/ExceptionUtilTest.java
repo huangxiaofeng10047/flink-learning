@@ -1,4 +1,4 @@
-import com.zhisheng.log.util.ExceptionUtil;
+import com.zhisheng.flink.util.ExceptionUtil;
 
 import java.util.HashMap;
 import java.util.Map;
